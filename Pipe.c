@@ -8,10 +8,9 @@
 int main(int argc, char **argv) {
    int pipe1[2], pipe2[2];
    int i;
+   
    int temp1[MSGSIZE];
    int temp2 = 0; //temp2 untuk menyimpan data penjumlahan semua nilai dari temp1
-   int readmessage1[MSGSIZE];
-   char readmessage2[100];
     for (i = 0; i < MSGSIZE; i++) {
            printf("INPUT DATA ");
            scanf("%d", &temp1[i]);
@@ -21,7 +20,10 @@ int main(int argc, char **argv) {
    char temp3[100];
    sprintf(temp3,"%d", temp2);
    
+   int readmessage1[MSGSIZE];
+   char readmessage2[100];
    
+   //buat pipe
    int returnstatus1, returnstatus2;
    returnstatus1 = pipe(pipe1);
        
